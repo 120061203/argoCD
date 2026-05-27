@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: xiaosongstudio/argocd-exercise0527:latest
+          image: xiaosongstudio/argocd-exercise0527:v2
           ports:
             - containerPort: 8000
           resources:
