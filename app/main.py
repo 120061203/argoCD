@@ -11,7 +11,12 @@ app = FastAPI(title="FastAPI CRUD - ArgoCD Demo")
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "version": "v3"}
+    return {"status": "ok", "version": "v4"}
+
+
+@app.get("/items/count")
+def count_items(db: Session = Depends(get_db)):
+    return {"count": db.query(Item).count()}
 
 
 @app.get("/items/", response_model=list[ItemResponse])
