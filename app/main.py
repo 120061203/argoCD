@@ -11,7 +11,7 @@ app = FastAPI(title="FastAPI CRUD - ArgoCD Demo")
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok"}
+    return {"status": "ok", "version": "v3"}
 
 
 @app.get("/items/", response_model=list[ItemResponse])
